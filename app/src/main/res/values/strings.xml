@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">toll_tax_collection</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="cities">
+        <item>Gujrat</item>
+        <item>Wazirabad</item>
+        <item>Gujrawala</item>
+        <item>Sialkot</item>
+        <item>Lahore</item>
+    </string-array>
+    <string-array name="vehicle_type">
+        <item>Car</item>
+        <item>Motor Cycle</item>
+        <item>Truck or other Heavy Vehicle</item>
+    </string-array>
+    <string-array name="license_type">
+        <item>Heavy Traffic License</item>
+        <item>Car/Motorcycle License</item>
+    </string-array>
+    <string-array name="provincr">
+        <item>Punjab</item>
+        <item>Sindh</item>
+        <item>Balochistan</item>
+        <item>KPK</item>
+    </string-array>
+</resources>
