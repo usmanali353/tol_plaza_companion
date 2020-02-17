@@ -26,14 +26,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -489,7 +481,6 @@ public class Firebase_Operations {
             }
         });
     }
-
     public static void verify_number_plate(String vehicle_number, final Context context) {
         final ProgressDialog dialog =new ProgressDialog(context);
         dialog.setMessage("Checking Vehicle Details...");
@@ -517,7 +508,6 @@ public class Firebase_Operations {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.cancel();
-
                             if(queryDocumentSnapshots.getDocuments().get(0).get("vehicle_type").toString().equalsIgnoreCase("Car")) {
                                 Log.e("phone",queryDocumentSnapshots.getDocuments().get(0).get("phone").toString());
                                 SmsManager smsManager = SmsManager.getDefault();

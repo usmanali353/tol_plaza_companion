@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("3B8GtwvnXFbO61sVU26dpNsj1jw1")){
                      Firebase_Operations.add_vehicle_info_to_system(MainActivity.this);
                 }else {
-                    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED){
+                    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED||ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED){
                         ActivityCompat.requestPermissions(MainActivity.this,
-                                new String[]{Manifest.permission.SEND_SMS},
+                                new String[]{Manifest.permission.SEND_SMS,Manifest.permission.READ_PHONE_STATE},
                                 2000);
                     }else {
                         CropImage.activity()
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==1000&&grantResults[0]==PackageManager.PERMISSION_GRANTED&&grantResults[1]==PackageManager.PERMISSION_GRANTED){
             startActivity(new Intent(MainActivity.this, Barcode_Scanner.class));
         }
-        if(requestCode==2000&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+        if(requestCode==2000&&grantResults[0]==PackageManager.PERMISSION_GRANTED&&grantResults[1]==PackageManager.PERMISSION_GRANTED){
             CropImage.activity()
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .start(MainActivity.this);
